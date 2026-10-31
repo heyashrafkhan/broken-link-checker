@@ -202,6 +202,9 @@ export class ScanManager extends EventEmitter {
       if (filters.errorType !== undefined && filters.errorType !== 'all') {
         const targetType = filters.errorType;
         results = results.filter((r) => {
+          if (targetType === '404') {
+            return r.statusCode === 404;
+          }
           if (targetType === 'http-error') {
             return (
               r.errorType === 'http-error' ||

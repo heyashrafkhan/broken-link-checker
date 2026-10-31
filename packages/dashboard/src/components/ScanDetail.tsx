@@ -85,7 +85,9 @@ export const ScanDetail: React.FC<ScanDetailProps> = ({ scanId, onBack }) => {
       }
 
       if (selectedErrorType !== 'all') {
-        if (selectedErrorType === 'http-error') {
+        if (selectedErrorType === '404') {
+          if (item.statusCode !== 404) return false;
+        } else if (selectedErrorType === 'http-error') {
           const isHttp =
             item.errorType === 'http-error' ||
             (item.statusCode !== null && item.statusCode >= 400 && item.statusCode < 600);

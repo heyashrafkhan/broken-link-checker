@@ -29,6 +29,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   const getFilterDescription = () => {
     if (selectedErrorType !== 'all') {
       const names: Record<string, string> = {
+        '404': '404 Not Found',
         'http-error': 'HTTP Errors (4xx/5xx)',
         'timeout': 'Timeouts',
         'dns': 'DNS Errors',
@@ -114,6 +115,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             }`}
           >
             <option value="all">All Error Types</option>
+            <option value="404">404 Not Found</option>
             <option value="http-error">HTTP Errors (4xx/5xx)</option>
             <option value="timeout">Timeouts</option>
             <option value="dns">DNS Resolution</option>

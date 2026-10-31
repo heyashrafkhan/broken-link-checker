@@ -1,3 +1,13 @@
+---
+title: Broken Link Scanner
+emoji: 🔗
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 3001
+pinned: false
+---
+
 # Broken Link Scanner 🚀
 
 > High-performance, production-ready broken link crawler and real-time diagnostic dashboard built without artificial page limits or scan caps.
