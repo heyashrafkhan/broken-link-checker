@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: broken-link-checker
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: NODE_ENV
+        value: production

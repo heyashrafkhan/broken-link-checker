@@ -1,0 +1,25 @@
+{
+  "name": "broken-link-checker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "High-performance, unlimited broken link scanner with real-time web dashboard",
+  "workspaces": [
+    "packages/crawler",
+    "packages/server",
+    "packages/dashboard"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=@blc/server\" \"npm run dev --workspace=@blc/dashboard\"",
+    "build": "npm run build --workspaces",
+    "start": "npm run start --workspace=@blc/server",
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
